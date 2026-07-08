@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zuhry Rustam</title>
+    <meta
+      name="description"
+      content="Website portofolio pribadi untuk menampilkan profil, skill, dan project."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#home">Zuhry Rustam</a>
+        <button id="menuButton" class="menu-button" aria-label="Buka menu">
+          Menu
+        </button>
+        <nav id="navMenu" class="nav-menu">
+          <a href="#about">Tentang</a>
+          <a href="#skills">Skill</a>
+          <a href="#projects">Project</a>
+          <a href="#games">Favorite Game</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="badge">PORTOFOLIO</p>
+            <h1>
+              Halo, saya <span class="highlight">Jupry</span><br />
+              Graphic Designer
+            </h1>
+            <p class="lead">
+              Saya membuat design yang clean, minimalis, unik dan enak dilihat.
+              Fokus saya adalah pengalaman pengguna dan desain yang bersih.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#projects">Lihat Project</a>
+              <a class="btn ghost" href="#contact">Hubungi Saya</a>
+            </div>
+          </div>
+          <div class="hero-side">
+            <div class="hero-card">
+              <h2>Quick Info</h2>
+              <ul>
+                <li>Lokasi: Indonesia</li>
+                <li>Role: Designer</li>
+                <li>Fokus: Graphic Design</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="portfolio-content">
+        <section id="skills" class="section alt">
+          <div class="container skills-row">
+            <h2>Skill</h2>
+            <div class="chip-grid">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Design</span>
+              <span class="chip">Graphic Design</span>
+              <span class="chip">Web Design</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section">
+          <div class="container about-grid">
+            <div class="about-copy">
+              <p class="about-label">ABOUT ME</p>
+              <h2>English Education Student & Graphic Designer</h2>
+              <p>
+                Saya adalah mahasiswa Pendidikan Bahasa Inggris di UIN Ar-Raniry
+                yang memiliki ketertarikan besar pada dunia graphic design dan
+                front-end development. Saya senang menggabungkan kreativitas
+                visual dengan teknologi untuk menciptakan pengalaman digital yang
+                sederhana, modern, dan bermakna.
+              </p>
+            </div>
+            <div class="top-photo about-photo">
+              <img src="pp profile.jpg.jpeg" alt="Foto profil Zuhry Rustam" />
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="container">
+            <h2>Project</h2>
+            <div class="project-grid">
+              <article class="project-card">
+                <h3>Project Satu</h3>
+                <p>Design mockup brand sweater .</p>
+                <a href="project-satu.html" target="_blank" rel="noopener noreferrer">Demo</a>
+              </article>
+              <article class="project-card">
+                <h3>Project Dua</h3>
+                <p>Design Poster.</p>
+                <a href="project-dua.html" target="_blank" rel="noopener noreferrer">Demo</a>
+              </article>
+              <article class="project-card tools-card" aria-label="Tools yang saya gunakan">
+                <h3>Tools yang Saya Gunakan</h3>
+                <div class="tools-logo-grid">
+                  <img src="vs.png" alt="Visual Studio Code" />
+                  <img src="affinity.png" alt="Affinity" />
+                  <img src="figma.png" alt="Figma" />
+                  <img src="ps.png" alt="Adobe Photoshop" />
+                </div>
+              </article>
+            </div>
+            <div class="project-gallery" aria-label="Galeri project">
+              <figure class="gallery-card gallery-far-left" data-slot="far-left">
+                <img src="hoodie reference.png" alt="Tampilan project Hoodie Reference" />
+              </figure>
+              <figure class="gallery-card gallery-left" data-slot="left">
+                <img src="Goto itori.png" alt="Tampilan project Goto Itori" />
+              </figure>
+              <figure class="gallery-card gallery-center" data-slot="center">
+                <img src="EYES.png" alt="Tampilan project Eyes" />
+              </figure>
+              <figure class="gallery-card gallery-right" data-slot="right">
+                <img src="still reaching per.png" alt="Tampilan project Still Reaching" />
+              </figure>
+            </div>
+          </div>
+        </section>
+
+       <section id="games" class="section">
+          <div class="container">
+            <p class="badge">FAVORITE GAME</p>
+            <h2>My Favorite Games</h2>
+            <div class="game-grid">
+              <div class="gif-placeholder">
+                <!-- Ganti src dengan file video kamu -->
+                <video
+                  src="cookizie.mp4"
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                ></video>
+              </div>
+              <div class="game-text">
+                <p>
+                  Di luar dunia desain dan pengembangan web, saya adalah penggemar story-driven games yang menikmati pengalaman bermain melalui alur cerita, karakter, dan visual yang kuat. Saat ini saya aktif memainkan beberapa game gacha seperti Honkai: Star Rail, Wuthering Waves, dan menantikan Arknights: Endfield. Selain itu, saya juga menikmati tantangan game ritme seperti osu!, yang melatih fokus, konsistensi, dan refleks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section alt">
+          <div class="container">
+            <h2>Kontak</h2>
+            <p>
+              Email: <a href="mailto:emailkamu@example.com">mzuhryrustam@gmail.com</a>
+            </p>
+            <p>Instagram: <a href="https://instagram.com/mzr803" target="_blank">@mzr803</a></p>
+            <p>WhatsApp: <a href="https://wa.me/6282362254950" target="_blank">+62 823 6225 4950</a></p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> Zuhry Rustam. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Dua | Zuhry Rustam</title>
+    <meta
+      name="description"
+      content="Halaman detail untuk Project Dua karya Zuhry Rustam."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="section">
+      <div class="container">
+        <p class="badge">PROJECT DUA</p>
+        <h1>Design Poster</h1>
+        <p class="lead">
+          Halaman ini menampilkan kumpulan karya poster untuk Project Dua.
+        </p>
+
+        <div class="poster-stage" aria-label="Preview project dua">
+          <div class="poster-stage-copy is-hidden" id="posterStageCopy">
+            <p class="poster-stage-kicker">Project Design Mockup</p>
+            <h2 id="posterStageTitle">Fragmented Identity</h2>
+            <p id="posterStageBody1">
+              An experimental poster design developed as a visual concept for sweater apparel.
+              This piece explores the idea of identity through fragmentation, blending traditional 
+              elements with modern digitaldistortion.
+            </p>
+            <p id="posterStageBody2">
+              The composition layers cultural textures, ornate garments, and raw
+              environmental visuals, disrupted by glitch effects and abstract
+              overlays. The contrast between rich red-cold fabrics and
+              industrial surroundings creates a tension between heritage and
+              contemporary expression.
+            </p>
+            <p id="posterStageBody3">
+              Designed not only as a poster but as a wearable concept, this
+              piece translates visual storytelling into fashion, where chaos,
+              culture, and individuality collide into a bold statement.
+            </p>
+          </div>
+
+          <div class="poster-rotator" aria-live="polite">
+            <figure class="poster-rotator-card poster-slot-left" data-slot="left" data-poster="eyes">
+              <img src="EYES.png" alt="Poster Eyes" />
+            </figure>
+            <figure class="poster-rotator-card poster-slot-center" data-slot="center" data-poster="still-reaching">
+              <img src="still reaching per.png" alt="Poster Still Reaching" />
+            </figure>
+            <figure class="poster-rotator-card poster-slot-right" data-slot="right" data-poster="meccah">
+              <img src="meccah.png" alt="Poster Meccah" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn ghost" href="index.html#projects">Kembali ke Portfolio</a>
+        </div>
+      </div>
+    </main>
+    <script>
+      const posterCards = document.querySelectorAll(".poster-rotator-card");
+      const posterStageCopy = document.getElementById("posterStageCopy");
+      const posterStageKicker = document.querySelector(".poster-stage-kicker");
+      const posterStageTitle = document.getElementById("posterStageTitle");
+      const posterStageBody1 = document.getElementById("posterStageBody1");
+      const posterStageBody2 = document.getElementById("posterStageBody2");
+      const posterStageBody3 = document.getElementById("posterStageBody3");
+      const posterCopyMap = {
+        eyes: {
+          kicker: "POSTER DESIGN MEDIA",
+          title: "Eyes: A Quiet Focus",
+          body1:
+            "A soft, monochromatic visual exploring the subtle power of eye contact and presence. This design highlights the subject’s gaze as the central narrative, framed through minimal graphic elements and gentle overlays.",
+          body2:
+            "The composition combines grain texture, blurred motion, and clean typography to create a dreamy, almost nostalgic atmosphere. The rectangular frame draws attention to the eyes, while abstract shapes and light accents add a modern editorial touch.",
+          body3:
+            "This piece reflects the idea of seeking beauty through stillness, where emotion is not loud, but deeply felt through a single glance.",
+        },
+        "still-reaching": {
+          kicker: "PROJECT DESIGN MOCKUP",
+          title: "FRAGMENTED IDENTITY",
+          body1:
+            "An experimental poster design developed as a visual concept for sweater apparel. This piece explores the idea of identity through fragmentation, blending traditional elements with modern digital distortion.",
+          body2:
+            "The composition layers cultural textures, ornate garments, and raw environmental visuals, disrupted by glitch effects and abstract overlays. The contrast between rich red-cold fabrics and industrial surroundings creates a tension between heritage and contemporary expression.",
+          body3:
+            "Designed not only as a poster but as a wearable concept, this piece translates visual storytelling into fashion, where chaos, culture, and individuality collide into a bold statement.",
+        },
+        meccah: {
+          kicker: "POSTER DESIGN MEDIA",
+          title: "TIME BELONGS TO HIM",
+          body1:
+            "A minimalist and atmospheric visual capturing the iconic Abraj Al Bait Clock Tower rising through soft clouds, symbolizing the divine ownership of time. This design blends warm tones, subtle textures, and elegant typography to create a calm yet powerful spiritual message.",
+          body2:
+            "Inspired by the sacred atmosphere of Mecca, the composition emphasizes stillness, reflection, and the transcendence of worldly time. The use of light, negative space, and a gentle gradient fade enhances the ethereal mood, guiding the viewer’s focus toward both the architecture and the message.",
+          body3:
+            "",
+        },
+      };
+
+      if (posterCards.length) {
+        const posterSlots = ["left", "center", "right"];
+        let isPosterRotating = false;
+
+        const updatePosterCopy = () => {
+          if (!posterStageCopy || !posterStageKicker || !posterStageTitle || !posterStageBody1 || !posterStageBody2 || !posterStageBody3) {
+            return;
+          }
+
+          const activeCard = Array.from(posterCards).find(
+            (card) => card.dataset.slot === "center"
+          );
+          const copy = activeCard ? posterCopyMap[activeCard.dataset.poster] : null;
+
+          if (!copy) {
+            posterStageCopy.classList.add("is-hidden");
+            return;
+          }
+
+          posterStageKicker.textContent = copy.kicker || "Project Story";
+          posterStageTitle.textContent = copy.title;
+          posterStageBody1.textContent = copy.body1;
+          posterStageBody2.textContent = copy.body2;
+          posterStageBody3.textContent = copy.body3;
+          posterStageBody3.hidden = !copy.body3;
+          posterStageCopy.classList.remove("is-hidden");
+        };
+
+        const applyPosterSlots = () => {
+          posterCards.forEach((card, index) => {
+            const currentSlot = posterSlots[index];
+            card.dataset.slot = currentSlot;
+            card.classList.remove(
+              "poster-slot-left",
+              "poster-slot-center",
+              "poster-slot-right"
+            );
+            card.classList.add(`poster-slot-${currentSlot}`);
+          });
+          updatePosterCopy();
+        };
+
+        const rotatePosters = () => {
+          if (isPosterRotating) {
+            return;
+          }
+
+          isPosterRotating = true;
+          if (posterStageCopy) {
+            posterStageCopy.classList.add("is-fading");
+          }
+          posterCards.forEach((card) => card.classList.add("is-animating"));
+          window.setTimeout(() => {
+            posterSlots.unshift(posterSlots.pop());
+            applyPosterSlots();
+          }, 220);
+
+          window.setTimeout(() => {
+            if (posterStageCopy) {
+              posterStageCopy.classList.remove("is-fading");
+            }
+            posterCards.forEach((card) => card.classList.remove("is-animating"));
+            isPosterRotating = false;
+          }, 1250);
+        };
+
+        posterCards.forEach((card) => {
+          card.tabIndex = 0;
+          card.addEventListener("mouseenter", rotatePosters);
+          card.addEventListener("click", rotatePosters);
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              rotatePosters();
+            }
+          });
+        });
+
+        applyPosterSlots();
+      }
+    </script>
+  </body>
+</html>
