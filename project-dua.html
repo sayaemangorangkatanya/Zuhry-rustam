@@ -59,6 +59,33 @@
               <img src="meccah.png" alt="Poster Meccah" />
             </figure>
           </div>
+
+          <div class="design-gallery-heading reveal">
+            <h3>Another Design by me :</h3>
+          </div>
+          <div class="design-gallery">
+            <figure class="design-item reveal" style="--reveal-delay:0.05s">
+              <img src="Desain/Goto Hitori.png" alt="Desain Goto Hitori" />
+            </figure>
+            <figure class="design-item reveal" style="--reveal-delay:0.1s">
+              <img src="Desain/SIGHT.png" alt="Desain Sight" />
+            </figure>
+            <figure class="design-item reveal" style="--reveal-delay:0.05s">
+              <img src="Desain/Starry Void.png" alt="Desain Starry Void" />
+            </figure>
+            <figure class="design-item reveal" style="--reveal-delay:0.1s">
+              <img src="Desain/Idul Adha.png" alt="Desain Idul Adha" />
+            </figure>
+            <figure class="design-item reveal" style="--reveal-delay:0.05s">
+              <img src="Desain/Astrophile.png" alt="Desain Astrophile" />
+            </figure>
+            <figure class="design-item reveal" style="--reveal-delay:0.1s">
+              <img src="Desain/Castorice.png" alt="Desain Castorice" />
+            </figure>
+            <figure class="design-item design-item-wide reveal" style="--reveal-delay:0.05s">
+              <img src="Desain/UMARU DESIGN.png" alt="Desain Umaru" />
+            </figure>
+          </div>
         </div>
 
         <div class="hero-actions">
@@ -186,6 +213,23 @@
         });
 
         applyPosterSlots();
+      }
+
+      // ===== SCROLL REVEAL untuk design-gallery =====
+      const revealItems = document.querySelectorAll(".reveal");
+      if (revealItems.length) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+        );
+        revealItems.forEach((el) => revealObserver.observe(el));
       }
     </script>
   </body>
