@@ -17,32 +17,56 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Zuhry Rustam</a>
+      </div>
+    </header>
+
     <main class="section">
       <div class="container">
-        <p class="badge">PROJECT SATU</p>
-        <h1>Design Mockup Brand Sweater</h1>
-        <p class="lead">
+        <p class="badge reveal">PROJECT SATU</p>
+        <h1 class="reveal" style="--reveal-delay:0.1s">Design Mockup Brand Sweater</h1>
+        <p class="lead reveal" style="--reveal-delay:0.2s">
           Halaman ini menampilkan detail singkat untuk project mockup brand
           sweater. Kamu bisa ganti isi halaman ini nanti dengan preview, proses
           desain, atau hasil final yang lebih lengkap.
         </p>
 
         <div class="project-detail-showcase" aria-label="Preview project satu">
-          <figure class="detail-shot detail-left">
+          <figure class="detail-shot detail-left reveal" style="--reveal-delay:0.05s">
             <img src="hoodie back.png" alt="Mockup hoodie tampak belakang" />
           </figure>
-          <figure class="detail-shot detail-center">
+          <figure class="detail-shot detail-center reveal" style="--reveal-delay:0.15s">
             <img src="mockup porto.png" alt="Mockup portofolio utama" />
           </figure>
-          <figure class="detail-shot detail-right">
+          <figure class="detail-shot detail-right reveal" style="--reveal-delay:0.25s">
             <img src="hoodie male.png" alt="Mockup hoodie tampak depan" />
           </figure>
         </div>
 
-        <div class="hero-actions">
+        <div class="hero-actions reveal" style="--reveal-delay:0.3s">
           <a class="btn ghost" href="index.html#projects">Kembali ke Portfolio</a>
         </div>
       </div>
     </main>
+
+    <script>
+      const revealItems = document.querySelectorAll(".reveal");
+      if (revealItems.length) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+        );
+        revealItems.forEach((el) => revealObserver.observe(el));
+      }
+    </script>
   </body>
 </html>
