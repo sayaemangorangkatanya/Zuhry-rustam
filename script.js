@@ -1,4 +1,3 @@
-
 const menuButton = document.getElementById("menuButton");
 const navMenu = document.getElementById("navMenu");
 const yearText = document.getElementById("year");
@@ -91,4 +90,28 @@ if (galleryCards.length) {
   });
 
   applySlots();
+}
+
+// ===== SCROLL REVEAL ANIMATION =====
+const revealElements = document.querySelectorAll(
+  ".reveal, .reveal-fade, .reveal-zoom"
+);
+
+if (revealElements.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          revealObserver.unobserve(entry.target); // animasi cukup sekali
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
+    }
+  );
+
+  revealElements.forEach((el) => revealObserver.observe(el));
 }
