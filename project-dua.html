@@ -25,9 +25,9 @@
 
     <main class="section">
       <div class="container">
-        <p class="badge">PROJECT DUA</p>
-        <h1>Design Poster</h1>
-        <p class="lead">
+        <p class="badge reveal">PROJECT DUA</p>
+        <h1 class="reveal" style="--reveal-delay:0.1s">Design Poster</h1>
+        <p class="lead reveal" style="--reveal-delay:0.2s">
           Halaman ini menampilkan kumpulan karya poster untuk Project Dua.
         </p>
 
@@ -94,12 +94,36 @@
           </div>
         </div>
 
-        <div class="hero-actions">
+        <div class="hero-actions reveal" style="--reveal-delay:0.3s">
           <a class="btn ghost" href="index.html#projects">Kembali ke Portfolio</a>
         </div>
       </div>
     </main>
+
+    <!-- ===== SECTION KONTAK ===== -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2 class="reveal">Kontak</h2>
+        <p class="reveal" style="--reveal-delay:0.05s">
+          Email: <a href="mailto:mzuhryrustam@gmail.com">mzuhryrustam@gmail.com</a>
+        </p>
+        <p class="reveal" style="--reveal-delay:0.15s">Instagram: <a href="https://instagram.com/mzr803" target="_blank">@mzr803</a></p>
+        <p class="reveal" style="--reveal-delay:0.25s">WhatsApp: <a href="https://wa.me/6282362254950" target="_blank">+62 823 6225 4950</a></p>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> Zuhry Rustam. All rights reserved.</small>
+      </div>
+    </footer>
+
     <script>
+      // Tahun otomatis untuk footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // ===== POSTER ROTATOR =====
       const posterCards = document.querySelectorAll(".poster-rotator-card");
       const posterStageCopy = document.getElementById("posterStageCopy");
       const posterStageKicker = document.querySelector(".poster-stage-kicker");
@@ -221,7 +245,7 @@
         applyPosterSlots();
       }
 
-      // ===== SCROLL REVEAL untuk design-gallery =====
+      // ===== SCROLL REVEAL =====
       const revealItems = document.querySelectorAll(".reveal");
       if (revealItems.length) {
         const revealObserver = new IntersectionObserver(
