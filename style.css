@@ -1,11 +1,11 @@
 :root {
-  --bg: #f7f8fa; /* putih kebiruan lembut */
-  --surface: #ffffff; /* card background */
-  --text: #12182b; /* teks gelap utama */
-  --muted: #5b6472; /* teks abu soft */
-  --primary: #3b82f6; /* biru lebih soft */
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --text: #12182b;
+  --muted: #5b6472;
+  --primary: #3b82f6;
   --primary-strong: #2563eb;
-  --border: #e2e6ed; /* border terang soft */
+  --border: #e2e6ed;
   --shadow: 0 16px 40px rgba(18, 24, 43, 0.1);
 }
 
@@ -57,7 +57,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(124, 58, 237, 0.08); /* ungu halus */
+  background: rgba(124, 58, 237, 0.08);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(124, 58, 237, 0.15);
 }
@@ -180,7 +180,7 @@ h1 {
 }
 
 .highlight {
-  color: #a78bfa; /* soft purple */
+  color: #a78bfa;
 }
 
 .lead {
@@ -348,7 +348,6 @@ h1 {
   object-fit: cover;
 }
 
-/* === TAMBAHKAN INI UNTUK VIDEO === */
 .gif-placeholder video {
   width: 100%;
   height: 100%;
@@ -356,19 +355,19 @@ h1 {
 }
 /* ===== END GAME SECTION ===== */
 
-
 /* ===== SKILLS & CONTACT ===== */
 #skills {
   background: rgba(167, 139, 250, 0.15);
 }
 
-#contact.alt {
+/* HAPUS / COMMENT aturan ini agar kontak di project halaman mengikuti background body */
+/* #contact.alt {
   background: #ffffff !important;
-}
+} */
 /* ===== END SKILLS & CONTACT ===== */
 
 .alt {
-  background: rgba(167, 139, 250, 0.3); /* lebih jelas */
+  background: rgba(167, 139, 250, 0.3);
   border-top: 0;
   border-bottom: 0;
 }
@@ -675,7 +674,7 @@ h1 {
   margin: 0;
 }
 
-/* ===== DESIGN GALLERY (di dalam poster-stage, di bawah poster-rotator) ===== */
+/* ===== DESIGN GALLERY ===== */
 .design-gallery-heading {
   grid-column: 1 / -1;
   margin-top: 2.5rem;
@@ -788,7 +787,7 @@ h1 {
   }
 }
 
-/* ===== HERO INTRO ANIMATION (muncul saat website dibuka) ===== */
+/* ===== HERO INTRO ANIMATION ===== */
 .hero-copy .badge,
 .hero-copy h1,
 .hero-copy .lead,
