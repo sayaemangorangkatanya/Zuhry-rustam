@@ -96,7 +96,7 @@ if (galleryCards.length) {
 const typingEl = document.getElementById("typingRole");
 
 if (typingEl) {
-  const typingRoles = ["Graphic Designer", "Frontend Dev"];
+  const typingRoles = ["Graphic Designer", "Frontend Developer"];
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
