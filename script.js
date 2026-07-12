@@ -92,6 +92,43 @@ if (galleryCards.length) {
   applySlots();
 }
 
+// ===== TYPING EFFECT (Graphic Designer / Frontend Dev) =====
+const typingEl = document.getElementById("typingRole");
+
+if (typingEl) {
+  const typingRoles = ["Graphic Designer", "Frontend Dev"];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typeLoop = () => {
+    const currentRole = typingRoles[roleIndex];
+
+    if (!isDeleting) {
+      charIndex++;
+      typingEl.textContent = currentRole.slice(0, charIndex);
+
+      if (charIndex === currentRole.length) {
+        isDeleting = true;
+        window.setTimeout(typeLoop, 1000); // jeda 1 detik sebelum dihapus
+        return;
+      }
+    } else {
+      charIndex--;
+      typingEl.textContent = currentRole.slice(0, charIndex);
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % typingRoles.length;
+      }
+    }
+
+    window.setTimeout(typeLoop, isDeleting ? 45 : 90);
+  };
+
+  typeLoop();
+}
+
 // ===== SCROLL REVEAL ANIMATION =====
 const revealElements = document.querySelectorAll(
   ".reveal, .reveal-fade, .reveal-zoom"
