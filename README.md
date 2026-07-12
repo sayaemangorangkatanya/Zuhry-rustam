@@ -2,7 +2,7 @@
 
 Website portofolio pribadi untuk menampilkan profil, skill, dan hasil karya desain grafis maupun front-end development.
 
-🔗 **Live Demo:** [sayaemangorangkatanya.github.io/Zuhry-rustam](https://sayaemangorangkatanya.github.io/Zuhry-rustam/index.html)
+🔗 **Live Demo:** [tinyurl.com/Zuhry-Rustam](tinyurl.com/Zuhry-Rustam)
 
 ---
 
