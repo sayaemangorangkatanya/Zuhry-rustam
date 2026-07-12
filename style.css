@@ -863,6 +863,33 @@ h1 {
 }
 /* ===== END TIMELINE ===== */
 
+/* ===== TYPING EFFECT (role di hero) ===== */
+.typing-role {
+  color: var(--text);
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  margin-left: 4px;
+  background: var(--text);
+  vertical-align: -0.1em;
+  animation: typingBlink 0.8s steps(1) infinite;
+}
+
+@keyframes typingBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-cursor {
+    animation: none;
+  }
+}
+/* ===== END TYPING EFFECT ===== */
+
 .detail-shot img {
   width: 100%;
   height: 100%;
