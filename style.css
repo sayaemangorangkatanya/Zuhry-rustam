@@ -905,6 +905,36 @@ h1 {
   border-top: 1px solid rgba(167, 139, 250, 0.2);
 }
 
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  margin-top: 0.9rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: var(--muted);
+  transition: color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.footer-socials svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus-visible {
+  color: var(--primary-strong);
+  background: rgba(139, 92, 246, 0.12);
+  transform: translateY(-2px);
+}
+
 /* ===== SCROLL REVEAL ANIMATION ===== */
 .reveal {
   opacity: 0;
